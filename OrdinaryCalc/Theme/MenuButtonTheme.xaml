@@ -1,38 +1,53 @@
 ﻿ <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
      
-    <Style BasedOn="{StaticResource {x:Type Button}}" 
-           TargetType ="{x:Type Button}" 
-           x:Key="MenuButtonThemeGray">
+    <Style
+        BasedOn="{StaticResource {x:Type Button}}" 
+        TargetType ="{x:Type Button}" 
+        x:Key="MenuButtonThemeGray">
         <Style.Setters>
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+           
             <Setter Property="Template">
                 <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Grid VerticalAlignment="Stretch"
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border VerticalAlignment="Stretch"
                               HorizontalAlignment="Stretch"                        
                               Background="{TemplateBinding Background}">
                             
-                            <TextBlock    
-                                
-                                Text="{TemplateBinding Property=Content}"
+                            <TextBlock                                 
+                                Text="{TemplateBinding Property=Content}"                       
                                 VerticalAlignment="Center"
                                 HorizontalAlignment="Center"
                                 FontSize="18"
-                                FontWeight="Bold"/>
+                                FontWeight="Bold"/>                         
+                                                       
+                        </Border>
+                        <!--<ControlTemplate.Triggers>
                             
-                        </Grid>
+                            <EventTrigger RoutedEvent="PreviewMouseDown">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetProperty="BackGround.Color" To="Black" Duration="0:0:0:0003"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+
+                            <EventTrigger RoutedEvent="PreviewMouseUp">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetProperty="Background.Color" To="{TemplateBinding Background}" Duration="0:0:0:0003"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            
+                        </ControlTemplate.Triggers>-->
+                        
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style.Setters>
-
-       <!--<Style.Triggers>
-            <Trigger Property="IsChecked" Value="True">
-                <Setter Property="Background" Value="Gray"/>
-            </Trigger>
-        </Style.Triggers>-->       
-    </Style>
-
-   
+            
+    </Style>  
 
 </ResourceDictionary>

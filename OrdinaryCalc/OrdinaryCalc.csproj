@@ -101,10 +101,15 @@
   <ItemGroup>
     <Folder Include="Core\" />
     <Folder Include="Fonts\" />
-    <Folder Include="Images\" />
     <Folder Include="MVVM\Model\" />
     <Folder Include="MVVM\ViewModel\" />
     <Folder Include="MVVM\View\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\X_active.png" />
+    <Resource Include="Images\X_disact.png" />
+    <Resource Include="Images\_ disactive.png" />
+    <Resource Include="Images\_active.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

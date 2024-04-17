@@ -5,16 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OrdinaryCalc"
         mc:Ignorable="d"      
-        Height="510"
+        Height="515"
         Width="300"
         WindowStyle="None"
         ResizeMode="NoResize"
         Background="Transparent"
-        AllowsTransparency="True">
+        AllowsTransparency="True" WindowStartupLocation="CenterScreen">
 
     <Border Background="black">
         <Grid>
             <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
                 <RowDefinition Height="170"/>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -23,11 +24,47 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
+            <Grid Name="ToolBar" 
+                  Grid.Row="0" 
+                  MouseDown="ToolBar_MouseDown"
+                  Background="Transparent">
+                
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+
+                <Image Name="Minimaze" Height="17" Width="18" MouseDown="Minimaze_MouseDown">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="Images/_ disactive.png"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsMouseOver, ElementName=Minimaze}" Value="true">
+                                    <Setter Property="Source" Value="Images/_active.png"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+                
+                <Image Name="Close" Height="21" Width="22" MouseDown="Close_MouseDown">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="Images/X_disact.png"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsMouseOver, ElementName=Close}" Value="true">
+                                    <Setter Property="Source" Value="Images/X_active.png"/>
+                                </DataTrigger>                                
+                            </Style.Triggers>
+                        </Style> 
+                    </Image.Style>
+                </Image>                
+
+            </StackPanel>
+            
+            </Grid>
 
             <TextBox 
                 x:Name="CountTextBox"       
                 Text = "0"                     
-                     Grid.Row = "0"
+                     Grid.Row = "1"
                      Height = "150"
                      Width = "280"
                      Margin = "10"  
@@ -40,34 +77,32 @@
                      FontSize="18"
                      TextChanged="TextBox_TextChanged"
                      >
+                
 
             </TextBox>
             
-            <StackPanel Grid.Row ="1"
+            <StackPanel Grid.Row ="2"
                         Margin ="10,0,5,7"
                         Orientation = "Horizontal">
                 
-                <Button    
-                        Content = "C"
+                <Button Content = "C"
                         Foreground = "Black"
                         Width = "62"
                         Margin = "0,0,10,0"                        
-                        Style = "{StaticResource MenuButtonThemeGray}" Click="Button_ClickClear"/>
+                        Style = "{StaticResource MenuButtonThemeGray}"
+                        Click="Button_ClickClear"/>
 
-                <Button 
-                        Content = "+-"
+                <Button Content = "+-"
                         Width = "62"
                         Margin = "0,0,10,0"                       
                         Style = "{StaticResource MenuButtonThemeGray}"/>
 
-                <Button                     
-                        Content="%"
+                <Button Content="%"
                         Width="62"
                         Margin="0,0,10,0"
                         Style="{StaticResource MenuButtonThemeGray}"/>
 
-                <Button 
-                        Content="/"
+                <Button  Content="/"
                      Foreground="White"
                         Background="Orange"
                         Width="62"
@@ -77,78 +112,35 @@
 
             </StackPanel>
 
-            <StackPanel Grid.Row ="2"
+            <StackPanel Grid.Row ="3"
             Margin ="10,0,5,7"
             Orientation = "Horizontal">
 
-                <Button    
-                    Content = "7"
+                <Button Content = "7"
                     Foreground = "White"
                     Background="DarkGray"
                     Width = "62"
                     Margin = "0,0,10,0"                        
                     Style = "{StaticResource MenuButtonThemeGray}" Click="Button_Click_7"/>
 
-                <Button 
-                    Content = "8"
+                <Button Content = "8"
                     Foreground = "White"
                     Background="DarkGray"
                     Width = "62"
                     Margin = "0,0,10,0"                       
                     Style = "{StaticResource MenuButtonThemeGray}" Click="Button_Click_8"/>
 
-                <Button                     
-                    Content="9"
+                <Button Content="9"
                      Foreground = "White"
                     Background="DarkGray"
                     Width="62"
                     Margin="0,0,10,0"
                     Style="{StaticResource MenuButtonThemeGray}" Click="Button_Click_9"/>
 
-                <Button 
-                    Content="*"
+                <Button Content="*"
                      Foreground="White"
                     Background="Orange"
                     Width="62"
-                    Margin="0,0,5,0"
-                    Style="{StaticResource MenuButtonThemeGray}"
-            />
-
-            </StackPanel>
-
-            <StackPanel Grid.Row ="3"
-            Margin ="10,0,5,7"
-            Orientation = "Horizontal">
-
-                <Button    
-                    Content = "4"
-                    Foreground = "White"
-                    Background="DarkGray"                   
-                    Width = "62"
-                    Margin = "0,0,10,0"                        
-                    Style = "{StaticResource MenuButtonThemeGray}" Click="Button_Click_4"/>
-
-                <Button 
-                     Content = "5"
-                    Foreground = "White"
-                    Background="DarkGray"
-                    Width = "62"
-                    Margin = "0,0,10,0"                       
-                    Style = "{StaticResource MenuButtonThemeGray}" Click="Button_Click_5"/>
-
-                <Button                     
-                    Content="6"
-                    Foreground = "White"
-                    Background="DarkGray"
-                    Width="62"
-                    Margin="0,0,10,0"
-                    Style="{StaticResource MenuButtonThemeGray}" Click="Button_Click_6"/>
-
-                <Button 
-                    Content="-"
-                     Foreground="White"
-                    Background="Orange"
-                     Width="62"
                     Margin="0,0,5,0"
                     Style="{StaticResource MenuButtonThemeGray}"
             />
@@ -156,6 +148,41 @@
             </StackPanel>
 
             <StackPanel Grid.Row ="4"
+            Margin ="10,0,5,7"
+            Orientation = "Horizontal">
+
+                <Button Content = "4"
+                    Foreground = "White"
+                    Background="DarkGray"                   
+                    Width = "62"
+                    Margin = "0,0,10,0"                        
+                    Style = "{StaticResource MenuButtonThemeGray}" Click="Button_Click_4"/>
+
+                <Button Content = "5"
+                    Foreground = "White"
+                    Background="DarkGray"
+                    Width = "62"
+                    Margin = "0,0,10,0"                       
+                    Style = "{StaticResource MenuButtonThemeGray}" Click="Button_Click_5"/>
+
+                <Button Content="6"
+                    Foreground = "White"
+                    Background="DarkGray"
+                    Width="62"
+                    Margin="0,0,10,0"
+                    Style="{StaticResource MenuButtonThemeGray}" Click="Button_Click_6"/>
+
+                <Button  Content="-"
+                    Foreground="White"
+                    Background="Orange"
+                    Width="62"
+                    Margin="0,0,5,0"
+                    Style="{StaticResource MenuButtonThemeGray}"
+            />
+
+            </StackPanel>
+
+            <StackPanel Grid.Row ="5"
                          Margin ="10,0,5,7"
                         Orientation = "Horizontal">
 
@@ -194,7 +221,7 @@
 
             </StackPanel>
 
-            <StackPanel Grid.Row ="5"
+            <StackPanel Grid.Row ="6"
                         Margin ="10,0,5,7"
                         Orientation = "Horizontal">
 

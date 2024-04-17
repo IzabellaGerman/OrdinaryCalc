@@ -87,5 +87,21 @@ namespace OrdinaryCalc
             {
             CountTextBox.Text = CountTextBox.Text == "0" ? (CountTextBox.Text = "0") : (CountTextBox.Text += "0");
             }
+
+        private void Close_MouseDown(object sender, MouseButtonEventArgs e)
+            {
+            this.Close();
+            }
+
+        private void Minimaze_MouseDown(object sender, MouseButtonEventArgs e)
+            {
+            this.WindowState = WindowState.Minimized;   
+            }
+
+        private void ToolBar_MouseDown(object sender, MouseButtonEventArgs e)
+            {
+            if (e.ChangedButton == MouseButton.Left)
+                { this.DragMove(); }
+            }
         }
 }

@@ -72,10 +72,10 @@
                      VerticalAlignment = "Top"
                      HorizontalAlignment = "Left"
                      Background = "Black"
-                     TextAlignment="Left"
+                     TextAlignment="Right"
                      Foreground = "White"
                      FontSize="18"
-                     TextChanged="TextBox_TextChanged"
+                     TextChanged="TextBox_TextChanged" VerticalContentAlignment="Bottom"
                      >
                 
 
@@ -95,19 +95,19 @@
                 <Button Content = "+-"
                         Width = "62"
                         Margin = "0,0,10,0"                       
-                        Style = "{StaticResource MenuButtonThemeGray}"/>
+                        Style = "{StaticResource MenuButtonThemeGray}" Click="Button_Click_change"/>
 
                 <Button Content="%"
                         Width="62"
                         Margin="0,0,10,0"
-                        Style="{StaticResource MenuButtonThemeGray}"/>
+                        Style="{StaticResource MenuButtonThemeGray}" Click="Button_Click_percentage"/>
 
                 <Button  Content="/"
                      Foreground="White"
                         Background="Orange"
                         Width="62"
                         Margin="0,0,5,0"
-                    Style="{StaticResource MenuButtonThemeGray}"
+                    Style="{StaticResource MenuButtonThemeGray}" Click="Button_Click_divide"
                         />
 
             </StackPanel>
@@ -142,7 +142,7 @@
                     Background="Orange"
                     Width="62"
                     Margin="0,0,5,0"
-                    Style="{StaticResource MenuButtonThemeGray}"
+                    Style="{StaticResource MenuButtonThemeGray}" Click="Button_Click_multiply"
             />
 
             </StackPanel>
@@ -177,7 +177,7 @@
                     Background="Orange"
                     Width="62"
                     Margin="0,0,5,0"
-                    Style="{StaticResource MenuButtonThemeGray}"
+                    Style="{StaticResource MenuButtonThemeGray}" Click="Button_Click_subtract"
             />
 
             </StackPanel>
@@ -216,7 +216,7 @@
                 Background="Orange"
                 Width="62"
                 Margin="0,0,5,0"
-                Style="{StaticResource MenuButtonThemeGray}"        
+                Style="{StaticResource MenuButtonThemeGray}" Click="Button_Click_add"        
             />
 
             </StackPanel>
@@ -239,7 +239,7 @@
                 Background="DarkGray"
                 Width="62"
                 Margin="0,0,10,0"
-                Style="{StaticResource MenuButtonThemeGray}"/>
+                Style="{StaticResource MenuButtonThemeGray}" Click="Button_Click_comma"/>
 
             <Button 
                 Content="="
@@ -247,7 +247,7 @@
                 Background="Orange"
                 Width="62"
                 Margin="0,0,5,0"
-                 Style="{StaticResource MenuButtonThemeGray}"/>
+                 Style="{StaticResource MenuButtonThemeGray}" Click="Button_Click_equal"/>
 
             </StackPanel>
         </Grid>

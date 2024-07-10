@@ -20,7 +20,7 @@ namespace OrdinaryCalc
     /// </summary>
     public partial class MainWindow : Window
     {
-        private decimal Operend = decimal.MinValue;
+        private decimal Operend = 0m;
         private string Operation = string.Empty;    
         public MainWindow()
         {
@@ -41,55 +41,183 @@ namespace OrdinaryCalc
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
             {
-
-            CountTextBox.Text = CountTextBox.Text == "0"| Operation != string.Empty? (CountTextBox.Text = "1"):(CountTextBox.Text +=  "1");
-
+                        
+            if (CountTextBox.Text == "0" | Operation != string.Empty)
+                {
+                CountTextBox.Text = "1";
+                }
+            else
+                {
+                if (CountTextBox.Text == "-0")
+                    {
+                    CountTextBox.Text = "-1";
+                    }
+                else
+                    {
+                    CountTextBox.Text += "1";
+                    }
+                }
             }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
             {
-            CountTextBox.Text = CountTextBox.Text == "0" | Operation != string.Empty ? (CountTextBox.Text = "2") : (CountTextBox.Text += "2");
+            if (CountTextBox.Text == "0" | Operation != string.Empty)
+                {
+                CountTextBox.Text = "2";
+                }
+            else
+                {
+                if (CountTextBox.Text == "-0")
+                    {
+                    CountTextBox.Text = "-2";
+                    }
+                else
+                    {
+                    CountTextBox.Text += "2";
+                    }
+                }
             }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
             {
-            CountTextBox.Text = CountTextBox.Text == "0" | Operation != string.Empty ? (CountTextBox.Text = "3") : (CountTextBox.Text += "3");
+            if (CountTextBox.Text == "0" | Operation != string.Empty)
+                {
+                CountTextBox.Text = "3";
+                }
+            else
+                {
+                if (CountTextBox.Text == "-0")
+                    {
+                    CountTextBox.Text = "-3";
+                    }
+                else
+                    {
+                    CountTextBox.Text += "3";
+                    }
+                }
             }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
             {
-            CountTextBox.Text = CountTextBox.Text == "0" | Operation != string.Empty ? (CountTextBox.Text = "4") : (CountTextBox.Text += "4");
+            if (CountTextBox.Text == "0" | Operation != string.Empty)
+                {
+                CountTextBox.Text = "4";
+                }
+            else
+                {
+                if (CountTextBox.Text == "-0")
+                    {
+                    CountTextBox.Text = "-4";
+                    }
+                else
+                    {
+                    CountTextBox.Text += "4";
+                    }
+                }
             }
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
             {
-            CountTextBox.Text = CountTextBox.Text == "0" | Operation != string.Empty ? (CountTextBox.Text = "5") : (CountTextBox.Text += "5");
+            if (CountTextBox.Text == "0" | Operation != string.Empty)
+                {
+                CountTextBox.Text = "5";
+                }
+            else
+                {
+                if (CountTextBox.Text == "-0")
+                    {
+                    CountTextBox.Text = "-5";
+                    }
+                else
+                    {
+                    CountTextBox.Text += "5";
+                    }
+                }
             }
 
         private void Button_Click_6(object sender, RoutedEventArgs e)
             {
-            CountTextBox.Text = CountTextBox.Text == "0" | Operation != string.Empty ? (CountTextBox.Text = "6") : (CountTextBox.Text += "6");
+            if (CountTextBox.Text == "0" | Operation != string.Empty)
+                {
+                CountTextBox.Text = "6";
+                }
+            else
+                {
+                if (CountTextBox.Text == "-0")
+                    {
+                    CountTextBox.Text = "-6";
+                    }
+                else
+                    {
+                    CountTextBox.Text += "6";
+                    }
+                }
             }
 
         private void Button_Click_7(object sender, RoutedEventArgs e)
             {
-            CountTextBox.Text = CountTextBox.Text == "0" | Operation != string.Empty ? (CountTextBox.Text = "7") : (CountTextBox.Text += "7");
+            if (CountTextBox.Text == "0" | Operation != string.Empty)
+                {
+                CountTextBox.Text = "7";
+                }
+            else
+                {
+                if (CountTextBox.Text == "-0")
+                    {
+                    CountTextBox.Text = "-7";
+                    }
+                else
+                    {
+                    CountTextBox.Text += "7";
+                    }
+                }
             }
       
 
         private void Button_Click_8(object sender, RoutedEventArgs e)
             {
-            CountTextBox.Text = CountTextBox.Text == "0" | Operation != string.Empty ? (CountTextBox.Text = "8") : (CountTextBox.Text += "8");
+            if (CountTextBox.Text == "0" | Operation != string.Empty)
+                {
+                CountTextBox.Text = "8";
+                }
+            else
+                {
+                if (CountTextBox.Text == "-0")
+                    {
+                    CountTextBox.Text = "-8";
+                    }
+                else
+                    {
+                    CountTextBox.Text += "8";
+                    }
+                }
             }
 
         private void Button_Click_9(object sender, RoutedEventArgs e)
             {
-            CountTextBox.Text = CountTextBox.Text == "0" | Operation != string.Empty ? (CountTextBox.Text = "9") : (CountTextBox.Text += "9");
+            if (CountTextBox.Text == "0" | Operation != string.Empty)
+                {
+                CountTextBox.Text = "9";
+                }
+            else
+                {
+                if (CountTextBox.Text == "-0")
+                    {
+                    CountTextBox.Text = "-9";
+                    }
+                else
+                    {
+                    CountTextBox.Text += "9";
+                    }
+                }
             }
 
         private void Button_Click_0(object sender, RoutedEventArgs e)
             {
-            CountTextBox.Text = CountTextBox.Text == "0" | Operation != string.Empty ? (CountTextBox.Text = "0") : (CountTextBox.Text += "0");
+             if (CountTextBox.Text == "0" | Operation != string.Empty| CountTextBox.Text == "-0")
+                {
+                CountTextBox.Text = "0";
+                }           
             }
 
         private void Close_MouseDown(object sender, MouseButtonEventArgs e)
@@ -114,9 +242,7 @@ namespace OrdinaryCalc
             Operend = Convert.ToDecimal(CountTextBox.Text);
             Operation = "+";
            
-        }
-
-       
+        }       
 
         private void Button_Click_subtract(object sender, RoutedEventArgs e)
         {
